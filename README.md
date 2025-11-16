@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# Secure Task Manager
+A secure cloud-backed task manager built with React, TypeScript, and Supabase.  
+This project demonstrates full CRUD operations (Create, Read, Update, Delete) on a cloud-hosted PostgreSQL database with Row Level Security (RLS) policies to ensure each user can only access their own tasks. User authentication is implemented with Supabase Auth, making the project both functional and cybersecurity-focused.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Instructions for Build and Use
 
-In the project directory, you can run:
+Steps to build and/or run the software:
 
-### `npm start`
+1. Clone this repository:
+    git clone <your-repo-url>
+2. Navigate into the project folder:
+    cd secure-task-manager
+3. Install dependencies:
+    npm install
+4. Add your Supabase project URL and anon key in src/supabaseClient.ts:
+    const supabaseUrl = 'YOUR_SUPABASE_URL';
+    const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY';
+5. Start the development server:
+    npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Instructions for using the software:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Open the app in your browser (default: http://localhost:3000).
 
-### `npm test`
+2. Sign up for a new account or sign in using an existing account.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Create, view, edit, and delete your own tasks.
 
-### `npm run build`
+4. Sign in as another user to verify that tasks from other users are not visible — enforced by Supabase RLS policies.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development Environment 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To recreate the development environment, you need the following software and/or libraries with the specified versions:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Node.js v20.x or later
 
-### `npm run eject`
+* npm v9.x or later
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* React 18.x
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* TypeScript 5.x
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Supabase account with a PostgreSQL project
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Useful Websites to Learn More
 
-## Learn More
+I found these websites useful in developing this software:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* https://supabase.com/docs
+* https://react.dev/learn
+* https://chatgpt.com/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Work
+
+The following items I plan to fix, improve, and/or add to this project in the future:
+
+*  Add real-time notifications using Supabase's Realtime features
+
+ * Create a second table with a relation to tasks (e.g., categories or tags)
+
+ * Improve UI/UX with better styling, loading states, and error messages
+
+ * Add unit and integration tests for frontend components and database operations
